@@ -18,3 +18,9 @@ http://localhost:3000/arrivals
 to send put request I se RESTclient in firefox
 save to databse
 http://localhost:3000/flight/18/arrived
+
+session store last view file 
+go to 
+http://localhost:3000/flight/18
+then
+http://localhost:3000/arrivals will display last viewed flight
