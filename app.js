@@ -3,8 +3,9 @@
  * Module dependencies.
  */
 
-module.exports = function (flights) {
+module.exports = function (flights,db) {
 	var express = require('express');
+	var MongoStore = require('connect-mongo')(express);
 	var routes = require('./routes')(flights);
 	var path = require('path');	
 	var app = express();
@@ -15,6 +16,13 @@ module.exports = function (flights) {
 	app.set('view engine', 'jade');
 	app.use(express.favicon());
 	app.use(express.logger('dev'));
+	app.use(express.cookieParser());
+	app.use(express.session({
+		secret:'keyboard cat',
+		store: new MongoStore({
+		mongoose_connection: db
+		})
+	}));
 	app.use(express.bodyParser());
 	app.use(express.methodOverride());
 	app.use(function (req, res, next) {
