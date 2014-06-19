@@ -1,0 +1,801 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+                      "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta name="keywords" content="CAP,common alerting protocol,CAP alert editor">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta http-equiv="content-language" content="en">
+<meta name="description" content="Editing tool for alerts in CAP (X.1303) format"/>
+<meta name="author" content="Eliot Christian"/>
+<meta name="expires" content="never"/>
+<title>Text Templates for CAP alerts</title>
+<style>
+body {font: normal 12px verdana;}
+.link {color:blue;text-decoration:underline;cursor:pointer};
+</style>
+</head>
+<body>
+<table>
+<tr><td width="40%"><h1><img src="capLogo.jpg" alt="CAP logo" width="90" height="30"/>
+Text <br/>Templates</h1></td>
+<td width="60%">Copy (CTRL+C) text as needed and <br/>
+Paste (CTRL+V) in a field of the draft alert.</td>
+</tr></table>
+<table>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row1').style.display='';">Show</button>
+Test</td>
+  </tr>
+  <tr style="display:none" id="row1">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row1').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>Test of the National Warning System. This is only a test.</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>This is a test of the national Public Warning System, this is only a test.</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>No action is required. Thank you for your attention.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row2').style.display='';">Show</button>
+Immediate  Evacuation (generic)</td>
+  </tr>
+  <tr style="display:none;" id="row2">
+   <td><table border="1">
+      <tr>
+        <td rowspan="2">
+          <button type="button" onclick="document.getElementById('row2').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>An immediate evacuation of [AREA] is required due to [REASON]</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Everyone in [AREA] should quickly, yet safely, go to [LOCATION] by [CAR/FOOT] via [ROUTE] to [EVACUATION_POINT].
+Do not block access roads or tracks.
+Do not take personal belongings other than critical medication and personal documents. Provide pets and other livestock with food and water. Stay out of the evacuation zone until it has been announced it is safe for you to return. Persons in areas not listed for evacuation should remain in place, and stay alert for changing conditions.
+Listen to the media for further instruction from local authorities.
+</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row3').style.display='';">Show</button>
+Shelter In Place (smoke or gas)</td>
+  </tr>
+  <tr style="display:none" id="row3">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row3').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>Shelter in place is declared at [LOCATION]</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>Smoke or Gas released in the area may cause negative health issues.</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Go inside / Stay inside.
+Close all windows and secure doors.
+Turn off all ventilation systems such as air conditioning.
+Turn off open flames.
+If there are gaps in windows or doors, seal with tape or damp towels.
+Stay off the phone and listen to local media for further information from local authorities.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row4').style.display='';">Show</button>
+Shelter In Place (generic - not gas)</td>
+  </tr>
+  <tr style="display:none" id="row4">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row4').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>Shelter in Place order at [LOCATION].</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>Due to [EVENT] a shelter in place is ordered for [LOCATION].</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Go inside / Stay inside.
+Close all windows and secure doors.
+Stay off the phone and listen to local media for further information from local authorities.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row5').style.display='';">Show</button>
+Fire/Prepare to Evacuate</td>
+  </tr>
+  <tr style="display:none" id="row5">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row5').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>Fire at [LOCATION/BUILDING] might cause evacuation.</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>A major fire is burning at [LOCATION/BUILDING DETAILS].</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Be prepared to evacuate. Follow instructions from authorities and listen to the news media for further information.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row6').style.display='';">Show</button>
+Fire - evacuation</td>
+  </tr>
+  <tr style="display:none" id="row6">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row6').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>Evacuation ordered due to dangerous fire at [AREA] </td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>Heavy wild land fire is a health hazard that requires evacuation.</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Remain calm.
+Follow the instructions of local officials and other emergency personnel.
+After leaving the area, go to the local officials or the Red Cross web site to register so your relatives can track you.
+Personnel in those areas not listed for evacuation should remain in place, be alert to changing conditions.
+Follow instructions from local authorities and listen to news media for further information.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row7').style.display='';">Show</button>
+Flood Warning</td>
+  </tr>
+  <tr style="display:none" id="row7">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row7').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>Flood warning for [AREA].</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>[heavy rain/storm surge] may cause floods in low lying areas. </td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Residents in low-lying areas should exercise caution. Avoid low areas.
+Persons should not be out on the roads during heavy rainfall. If you must be outside, use extreme caution.
+Do not drive your vehicle into areas where water covers the roadway.
+Vehicles caught in rising waters should be abandoned quickly.
+Continue listening to local media as updates will be provided if conditions change significantly.
+If you require additional information please contact [AGENCY] at [TELEPHONE NUMBER].
+</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row8').style.display='';">Show</button>
+Gas Leak</td>
+  </tr>
+  <tr style="display:none" id="row8">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row8').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>A Gas Leak has been reported at [LOCATION]. </td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>A Gas Leak is posing a threat of fire or explosion from accidental ignition.</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>If you are in the vicinity, immediately extinguish any open flames or embers and be prepared to evacuate.
+If you are not in the area, stay away.
+Follow instructions from local authorities and listen to the news media for further information.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+      <button type="button" onclick="document.getElementById('row9').style.display='';">Show</button>
+Biological Threat</td>
+  </tr>
+  <tr style="display:none" id="row9">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row9').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>Biological threat at [LOCATION]</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>A biological threat has been received and we deem it credible.</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>If you are in the vicinity of [LOCATION], prepare immediately for possible evacuation.
+Follow instructions from local authorities and listen to news media for further information. </td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row10').style.display='';">Show</button>
+Bomb Threat</td>
+  </tr>
+  <tr style="display:none" id="row10">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row10').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>Bomb threat at [LOCATION]</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>A bomb threat emergency is in effect for [LOCATION/BUILDING]</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>If you are in the building, evacuate immediately.
+People in the vicinity of the location, prepare immediately for possible evacuation.
+If you are not in the area, stay away.
+Follow instructions from local authorities and listen to news media for further information.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row11').style.display='';">Show</button>
+Sand/Dust/Heavy Rain Storm Bulletin</td>
+  </tr>
+  <tr style="display:none" id="row11">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row11').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>[Sand/Dust/Heavy Rain] Storm bulletin for [LOCATION].</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>Storm is impacting visibility.</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Persons are asked to take precaution and secure lightweight objects, avoid traveling on roads and avoid beaches. Stay inside and listen to local media for further information from local authorities.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row12').style.display='';">Show</button>
+High wind warning</td>
+  </tr>
+  <tr style="display:none" id="row12">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row12').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>High wind warning for [AREA] </td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>High winds capable of causing power outages and property damage are expected.</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>These winds can cause lightweight objects to become dangerous airborne projectiles.
+High profile vehicles and vehicles pulling trailers can be flipped by crosswinds.
+Blowing dust can quickly reduce visibility to near zero, resulting in hazardous driving conditions and accidents involving motorists taken by surprise.
+Blowing dust or sand can also be a health hazard for those with respiratory problems.
+Secure lightweight objects. avoid traveling on roads with crosswinds.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row13').style.display='';">Show</button>
+Tsunami (Local) Evacuation Warning</td>
+  </tr>
+  <tr style="display:none" id="row13">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row13').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>URGENT--TSUNAMI EVACUATION Warning for [LOCATION]. Head for higher ground immediately. </td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>A tsunami has been generated and is expected to impact in [NUMBER] minutes.</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>All residents in [WARNING_AREA] should move immediately to high ground and away from all shorelines and low lying areas.
+Help persons that need assistance to evacuate.
+If you see unusual wave action...or water level rising or receding you may have only minutes to evacuate. Do so now.
+Go to your closest tsunami safety point, follow evacuation signs or ask locals. Do not take anything with you and do not block roads or paths. Stay at the tsunami safe point as the tsunami may take several hours to pass. Local authorities will tell you when it is safe.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row14').style.display='';">Show</button>
+Tsunami (Regional - Tele) Warning</td>
+  </tr>
+  <tr style="display:none" id="row14">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row14').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>Regional TSUNAMI Warning for [LOCATION]. Head for higher ground immediately.</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>A Tsunami is verified to have occurred in the [LOCATION A] region that is expected to impact the Caribbean and specifically [LOCATION B] in the next [NUMBER] hours.</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Prepare to head to higher ground and carefully make your way to your location tsunami evacuation point.
+For [LOCATION] go to [LOCATIONS].
+Help persons that need assistance to evacuate.
+If you see unusual wave action or water level rising or receding you may have only minutes to evacuate.
+Do not wait until too late as tsunami can be unpredictable.
+Follow evacuation signs or ask locals.
+Take required medications, water and appropriate protection from the weather with you.
+Ensure pets and livestock are secured at higher ground if possible.
+Do not block roads or paths.
+Stay at the tsunami evacuation point as the tsunami may take several hours to arrive and then to pass.
+Local authorities will tell you if there are any updates and when it is safe to return home.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row15').style.display='';">Show</button>
+Tropical Storm Warning (48 hours)</td>
+  </tr>
+  <tr style="display:none" id="row15">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row15').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>Tropical Storm Warning is issued for [AREA].</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>Tropical storm [NAME] is threatening to arrive in [NUMBER] of hours. High winds, dangerously high water and rough seas are expected.</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Listen to the radio or television for tropical storm progress reports.
+Check emergency supplies.
+Fuel car.
+Bring in outdoor objects such as lawn furniture, toys, and garden tools and anchor objects that cannot be brought inside.
+Secure buildings by closing and boarding up windows.
+Remove outside antennas and satellite dishes.
+Turn refrigerator and freezer to coldest settings. Open only when absolutely necessary and close quickly.
+Store drinking water in clean jugs, bottles, and cooking utensils.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row16').style.display='';">Show</button>
+Tropical Storm Warning (36 hours)</td>
+  </tr>
+  <tr style="display:none" id="row16">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row16').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>[LOCATION] is now under Tropical storm Warning and may experience tropical storm force winds within the next 24-36 hours.</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>A tropical storm warning means that tropical storm conditions are expected somewhere within the warning area.</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Residents and visitors are strongly advised to rapidly complete preparations for the onset of a hurricane.
+The next advisory will be issued at [TIME] or as events change.
+If you require additional information please call the department of disaster management on [PHONE_NUMBERS]  and listen to the media.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row17').style.display='';">Show</button>
+Tropical Storm Warning (less than 12 hours)</td>
+  </tr>
+  <tr style="display:none" id="row17">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row17').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>[LOCATION] Remains under Tropical storm Warning.</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>A tropical storm warning remains in effect for [AREA] including [LOCATION]. Tropical storm conditions are expected within the next few hours.</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>All persons need to be sheltering in place.
+The public is advised preparations to protect life and property must have already been completed.
+Listen to local media for updates.
+The next complete bulletin will be issued at [TIME A]. An intermediate bulletin will be issued at [TIME B].
+If you require additional information please call the national emergency operations center at [LANDLINE] or [MOBILE] or the Fire  or Police Departments.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row18').style.display='';">Show</button>
+Hurricane Watch</td>
+  </tr>
+  <tr style="display:none" id="row18">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row18').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>A Hurricane watch is issued </td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>Hurricane [NAME] is threatening to arrive in [NUMBER] hours.
+Winds of up to [WIND SPEED], dangerously high water and rough seas are expected.</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Listen to the radio or television for hurricane progress reports.
+Check emergency supplies.
+Fuel car.
+Bring in outdoor objects such as lawn furniture, toys, and garden tools and anchor objects that cannot be brought inside.
+Secure buildings by closing and boarding up windows.
+Remove outside antennas and satellite dishes.
+Turn refrigerator and freezer to coldest settings.
+Open only when absolutely necessary and close quickly.
+Store drinking water in clean jugs, bottles, and cooking utensils.</td>
+     </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row19').style.display='';">Show</button>
+Hazardous Material Evacuation</td>
+  </tr>
+  <tr style="display:none" id="row19">
+    <td><table border="1">
+      <tr>
+        <td rowspan="2">
+          <button type="button" onclick="document.getElementById('row19').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>Hazardous material spill reported at [LOCATION] requires evacuation from the area</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Leave the area calmly.
+After leaving the area, go to the local officials or the Red Cross web site to register so your relatives can track you.
+Personnel in those areas not listed for evacuation should remain in place, be alert to changing conditions.
+Follow instructions from local authorities and listen to news media for further information.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row20').style.display='';">Show</button>
+Power Failure</td>
+  </tr>
+  <tr style="display:none" id="row20">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row20').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>Electrical power failure at [LOCATION]</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>[LOCATION] is experiencing power failure. All buildings and facilities are affected.</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Remain calm.
+There is NO need for an evacuation.
+Drive carefully as traffic lights might be off.
+Turn off air conditioners and heavy machinery.
+Follow instructions from local authorities and listen to news media for further information.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row21').style.display='';">Show</button>
+Active Shooter(s)</td>
+  </tr>
+  <tr style="display:none" id="row21">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row21').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>Police activity - Active Shooter at [LOCATION] - stay away from the area.</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>Active shooting is reported at [LOCATION]</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Avoid the area.
+All individuals that are in the area should stay inside their current location.
+Do not allow access to anyone unknown to you without a valid ID.
+Police are on-scene investigating.
+Follow instructions from local authorities and listen to news media for further information.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row22').style.display='';">Show</button>
+Missing Child/Person</td>
+  </tr>
+  <tr style="display:none" id="row22">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row22').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>Searching for a missing [CHILD/PERSON].</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>A [NUMBER] year old [SEX] is missing.</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Police are reporting a [NUMBER] year old [SEX] is missing from[LOCATION] and may be at risk.
+He/she is [HEIGHT], weighs approximately [NUMBER] LBS/KILOS, has [COLOUR] hair and [COLOUR] eyes and [COLOUR] skin.
+He/she was last seen at [TIME am/pm] at [LOCATION],
+Wearing [CLOTHES].
+The public is asked to look in front and back yards, vehicles and sheds and to report any information immediately to the police at [PHONE NUMBER].
+</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row23').style.display='';">Show</button>
+Curfew</td>
+  </tr>
+  <tr style="display:none" id="row23">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row23').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>A curfew is in effect. Stay indoors.</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>A curfew is in effect due to [REASON].</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Stay indoors until further notice.</td>
+      </tr>
+    </table></td>
+   </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row24').style.display='';">Show</button>
+Curfew Lifted</td>
+  </tr>
+  <tr style="display:none" id="row24">
+    <td><table border="1">
+      <tr>
+        <td rowspan="2">
+          <button type="button" onclick="document.getElementById('row24').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>The curfew has been lifted</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Resume normal activities.</td>
+      </tr>
+    </table></td>
+   </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row25').style.display='';">Show</button>
+Be on the Alert</td>
+  </tr>
+  <tr style="display:none" id="row25">
+    <td><table border="1">
+      <tr>
+        <td rowspan="2">
+          <button type="button" onclick="document.getElementById('row25').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>Be on alert!</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>The public are asked to be watchful for [SOMETHING OR SOMEONE] and report any observations to [SPECIFY AUTHORITY] at [TELEPHONE .NUMBER].
+Follow instructions from authorities and listen to the news media for further information.</td>
+      </tr>
+    </table></td>
+   </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row26').style.display='';">Show</button>
+Generic Incident Template</td>
+  </tr>
+  <tr style="display:none" id="row26">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row26').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>[HAZARD_TYPE / PROTECTIVE_ACTION]</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>[WHAT IS HAPPENING].
+[WHEN IS/WILL IT HAPPEN].
+[WHO IS AT RISK].
+[WHAT EFFECT WILL IT HAVE].</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>[WHAT SHOULD PEOPLE DO].</td>
+      </tr>
+    </table></td>
+   </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row27').style.display='';">Show</button>
+Operations Suspended (weather)</td>
+  </tr>
+  <tr style="display:none" id="row27">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row27').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>Weather conditions suspend government activity.</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>[STORM NAME] has suspended non-essential activity until further notice</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Please refrain from requesting government services unless you have a life threatening emergency.
+Government employee - Check with your supervisor regarding whether your position is essential during this situation.
+Please limit phone use so phone lines are available for emergency messaging.
+Follow instructions from local authorities and listen to news media for further information.</td>
+      </tr>
+    </table></td>
+  </tr>
+
+  <tr>
+    <td>
+     <button type="button" onclick="document.getElementById('row28').style.display='';">Show</button>
+All Clear</td>
+  </tr>
+  <tr style="display:none" id="row28">
+    <td><table border="1">
+      <tr>
+        <td rowspan="3">
+          <button type="button" onclick="document.getElementById('row28').style.display='none';">Hide</button>
+        </td>
+        <td><b>Headline</b></td>
+        <td>The emergency is over, all clear now.</td>
+      </tr>
+      <tr>
+        <td><b>Description</b></td>
+        <td>The emergency situation has ended.</td>
+      </tr>
+      <tr>
+        <td><b>Instruction</b></td>
+        <td>Please resume normal activity. </td>
+      </tr>
+    </table></td>
+   </tr>
+
+</table>
+</body>
+</html>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+         xmlns="http://java.sun.com/xml/ns/javaee" 
+         xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" 
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" 
+         version="3.0">
+<!-- All top-level elements are optional and can be in any order. 
+     Filters and listeners should be listed before servlets. -->
+	<display-name>Drafting and Publishing CAP Alerts</display-name>
+<!--  These context parameter values should be customized to the implementation.  -->
+	<context-param>
+		<param-name>alertingAuthorityLogoUrl</param-name>
+		<param-value>http://www.nmhs.gov/logo.png</param-value>
+	</context-param>
+ 	<context-param>
+		<param-name>alertingAuthorityOid</param-name>
+		<param-value>urn:oid:2.49.0.1.800.0</param-value>
+		<!--  This value is unique to Meteo Uganda because the ISO 3166-1 numeric code 
+		for Uganda is 800 (see http://en.wikipedia.org/wiki/ISO_3166-1_numeric#Current_codes ) 
+		and Meteo Uganda was the first alerting authority registered for Uganda. Alert 
+		messages are prefixed with urn:oid:2.49.0.1.c.n where c is the ISO 3166-1 country 
+		code and n identifies a particular authority as registered by that country.  --> 
+	</context-param>
+ 	<context-param>
+		<param-name>alertingAreaDefaultLatLng</param-name>
+		<!--  This latitude,longitude is near the center of Uganda. -->
+		<param-value>1.22,32.48</param-value>
+	</context-param>
+	<context-param>
+		<param-name>alertingAreaDefaultZoom</param-name>
+		<param-value>8</param-value>
+	</context-param>
+	<context-param>
+		<param-name>capDraftsDirectoryName</param-name>
+		<param-value>/home/chathura/sahana-web/cap/en/drafts</param-value>
+	</context-param>
+	<context-param>
+		<param-name>capAlertsDirectoryName</param-name>
+		<param-value>/home/chathura/sahana-web/cap/en/alerts</param-value>
+	</context-param>
+	<context-param>
+		<param-name>capAlertsRssFileName</param-name>
+		<param-value>/home/chathura/sahana-web/cap/en/alerts/rss.xml</param-value>
+	</context-param>
+	<context-param>
+		<param-name>capAlertsPublicUrlStub</param-name>
+		<param-value>http://www.nmhs.gov/alerts</param-value>
+	</context-param>
+	<context-param>
+		<param-name>capAlertsRssItemLimit</param-name>
+		<param-value>50</param-value>
+	</context-param>
+	<context-param>
+		<param-name>capAdminEmail</param-name>
+		<param-value>eliotjchristian@gmail.com</param-value>
+		<!--This e-mail address becomes	the 'from' address when the program 
+		sends copies of an alert via e-mail. -->
+	</context-param>
+	<context-param>
+		<param-name>mailDeliveryMethod</param-name>
+		<param-value>immediate</param-value>
+		<!-- choice of pickup | immediate -->
+	</context-param>
+	<!-- pickup directory is required 
+		 if mailDeliveryMethod=pickup -->
+	<context-param>
+		<param-name>mailPickupDirectoryName</param-name>
+		<param-value>/home/chathura/sahana-web/inetpub/mailroot/Pickup</param-value>
+	</context-param>
+	<!-- host,port,username, and password are required 
+		 if mailDeliveryMethod=immediate -->
+	<context-param>
+		<param-name>mailSmtpHost</param-name>
+		<param-value>smtp.gmail.com</param-value>
+		<!-- gmail is only an example. Enter the name of SMTP host to be used. 
+		For Yahoo mail, this would be smtp.mail.yahoo.com or smtp.mail.yahoo.fr 
+		Note that it is expected to use SMTP over SSL so mail is encrypted. -->
+	</context-param>
+	<context-param>
+		<param-name>mailSmtpPort</param-name>
+		<param-value>465</param-value>
+		<!-- For gmail and Yahoo example, 465 is the port used for SMTP over SSL. -->
+	</context-param>
+	<context-param>
+		<param-name>mailSubmitterUsername</param-name>
+		<param-value>editor's-real-email-address-here</param-value>
+		<!-- editor's-real-email-address-here This is the 'login' name of an e-mail submitter who is 
+		permitted to send mail via the mailSmtpHost identified below. -->
+	</context-param>
+	<context-param>
+		<param-name>mailSubmitterPassword</param-name>
+		<param-value>editor's-real-password-here</param-value>
+		<!--   This is the associated password for the e-mail submitter 
+		 permitted to send mail via the mailSmtpHost identified below. -->
+	</context-param>
+<!-- END of context-param elements for CAP Editor application -->
+	
+<!-- the following are examples only, haven't yet needed filter nor listener
+	<filter>
+		<display-name>Filter1</display-name>
+		<filter-name>Filter1</filter-name>
+		<filter-class>Filter1</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>Filter1</filter-name>
+		<url-pattern>/Filter1</url-pattern>
+	</filter-mapping>
+	<filter-mapping>
+		<filter-name>Filter1</filter-name>
+		<servlet-name>Servlet1</servlet-name>
+		<dispatcher>REQUEST</dispatcher>
+		<dispatcher>FORWARD</dispatcher>
+		<dispatcher>INCLUDE</dispatcher>
+		<dispatcher>ERROR</dispatcher>
+	</filter-mapping>
+	<listener>
+		<listener-class>Listener1</listener-class>
+	</listener>
+ -->
+<!-- should implement the servlet and servlet mapping
+	<servlet>
+		<servlet-name>CapAlertEdit</servlet-name>
+		<servlet-class>org.cap.editor.jsp.EditController</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CapAlertEdit</servlet-name>
+		<url-pattern>/edit</url-pattern>
+	</servlet-mapping>
+	<session-config>
+		<session-timeout>10</session-timeout>
+	</session-config>
+ -->
+	<resource-ref>
+		<description>Resource reference to a factory for javax.mail.Session
+			instances that may be used for sending electronic mail messages,
+			preconfigured to connect to the appropriate SMTP server.
+		</description>
+		<res-ref-name>mail/Session</res-ref-name>
+		<res-type>javax.mail.Session</res-type>
+		<res-auth>Container</res-auth>
+	</resource-ref>
+	<security-constraint>
+		<display-name>Access restricted by role and encryption enforced</display-name>
+		<web-resource-collection>
+			<web-resource-name>App access by admin or member editor, using HTTPS</web-resource-name>
+			<url-pattern>/*</url-pattern>
+	    <!--  by not specifying http-method we constrain all HTTP methods 
+			<http-method>POST</http-method>  
+			-->
+		</web-resource-collection>
+		<auth-constraint>
+			<!-- Users authenticated by username, password are associated to 
+				editor-cap role by editing  CATALINA_HOME/conf/tomcat-users.xml 
+				In this application, username must be the editor's e-mail address -->
+			<role-name>editor-cap</role-name>
+		</auth-constraint>
+		<user-data-constraint>
+			<!-- The following constrains access by HTTPS (encrypted messages) when 
+			transport-guarantee is CONFIDENTIAL and allows HTTP when it is NONE -->
+			<transport-guarantee>NONE</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+	<!--  by not specifying http-method we constrain all HTTP methods -->
+<!-- These security constraints are not being used
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>CapEditor</web-resource-name>
+			<url-pattern>/org.cap.editor.jsp/*</url-pattern>
+		</web-resource-collection>
+		<user-data-constraint>
+			<description>some description</description>
+			<transport-guarantee>INTEGRAL</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+-->
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>Username must be your e-mail address</realm-name>
+		<!--  The realm-name value shows on the username/password challenge dialog -->
+	</login-config>
+	<security-role>
+		<role-name>editor-cap</role-name>
+	</security-role>
+<!--
+	<env-entry>
+		<description>administrator email address</description>
+		<env-entry-name>adminEmail</env-entry-name>
+		<env-entry-value>echristian@usgs.gov</env-entry-value>
+	</env-entry>
+ -->
+	<welcome-file-list>
+		<welcome-file>edit.html</welcome-file>
+	</welcome-file-list>
+</web-app>
