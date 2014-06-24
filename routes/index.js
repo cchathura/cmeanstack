@@ -64,6 +64,21 @@ module.exports = function (flights) {
 				}
 		});
 	};
+	
+	functions.login = function(req,res){
+		res.render('login',{title:'log in'});
+	};
+	
+	functions.user = function(req,res){
+		if (req.session.passport.user === undefined){
+			res.redirect('/login');		
+		
+		}else{
+			res.render('user',{title:'wel come',
+				user :  req.user
+			})
+		}
+	};
 
 	return functions;
 };

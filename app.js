@@ -1,11 +1,12 @@
 
 /**
- * Module dependencies.
+ * Module dependencies. my 
  */
 
 module.exports = function (flights,db) {
 	var express = require('express');
 	var MongoStore = require('connect-mongo')(express);
+	var passport = require('./auth');
 	var routes = require('./routes')(flights);
 	var path = require('path');	
 	var app = express();
@@ -23,6 +24,8 @@ module.exports = function (flights,db) {
 		mongoose_connection: db
 		})
 	}));
+	app.use(passport.initialize());
+	app.use(passport.session());
 	app.use(express.bodyParser());
 	app.use(express.methodOverride());
 	app.use(function (req, res, next) {
@@ -41,6 +44,12 @@ module.exports = function (flights,db) {
 	app.put('/flight/:number/arrived', routes.arrived);
 	app.get('/list', routes.list);
 	app.get('/arrivals', routes.arrivals);
+	app.get('/login', routes.login);
+	app.post('/login', passport.authenticate('local', {
+		failureRedirect: '/login',
+		successRedirect: '/user'
+	}));
+	app.get('/user', routes.user);
 
 
 	return app;
