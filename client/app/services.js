@@ -1,17 +1,12 @@
-/*jslint node: true */
-/*global angular, localStorage */
-"use strict";
-
-angular.module("myApp.services", []).factory("songService", function() {
-  var STORAGE_ID = 'myApp.songs', factory = { };
-  
-  factory.get = function() {
-    return JSON.parse(localStorage.getItem(STORAGE_ID) || '[]');
-  };
-  
-  factory.put = function(songs) {
-    localStorage.setItem(STORAGE_ID, JSON.stringify(songs));
-  };
-  
-  return factory;
-});
+    angular.module("myApp.services", []).factory("Song", function($resource) {
+      return $resource('/api/songs/:id', {
+        id: '@id'
+      }, {
+        update: {
+          method: "PUT"
+        },
+        remove: {
+          method: "DELETE"
+        }
+      });
+    });
